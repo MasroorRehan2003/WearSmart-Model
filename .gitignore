@@ -1,5 +1,4 @@
-﻿@"
-# Python
+﻿# Python
 __pycache__/
 *.pyc
 .venv/
@@ -16,16 +15,22 @@ data/
 *.sqlite
 
 # Models & checkpoints
-
 *.pt
 *.bin
 *.onnx
 *.joblib
 blip_finetunedggdata/
 
-# Local image closets (keep local)
-clothing_images/
-clothing_images_men/
+# Model files - EXCEPT main models (needed for Railway deployment)
+*.h5
+# Allow these specific model files for deployment:
+!weather_clothing_recommender.pkl
+!weather_clothing_recommender_women.pkl
+
+# Local image closets (keep local - not needed if using Cloudinary/MongoDB)
+# Uncomment these if you want to deploy local images to Railway:
+# clothing_images/
+# clothing_images_men/
 coat/
 cotton pants/
 hoodie/
@@ -44,4 +49,3 @@ trousers/
 Thumbs.db
 .vscode/
 .idea/
-"@ | Out-File -Encoding UTF8 .gitignore
