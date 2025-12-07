@@ -42,8 +42,8 @@ requests
 # Optional Dependencies (for other scripts)
 # ===========================================
 # Uncomment if you need these features:
-# streamlit>=1.28.0           # For Streamlit UI apps
+ streamlit>=1.28.0           # For Streamlit UI apps
 # gradio>=4.0.0               # For Gradio UI apps
-# torch>=2.0.0                # PyTorch (for BLIP image captioning)
-# transformers>=4.30.0        # Hugging Face transformers (for BLIP)
+ torch>=2.0.0                # PyTorch (for BLIP image captioning)
+ transformers>=4.30.0        # Hugging Face transformers (for BLIP)
 # Pillow>=10.0.0              # PIL/Pillow for image processing
