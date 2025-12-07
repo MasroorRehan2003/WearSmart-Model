@@ -12,9 +12,10 @@ python-multipart>=0.0.6       # For handling file uploads and form data
 # ===========================================
 # Machine Learning Dependencies
 # ===========================================
-joblib>=1.3.2                 # For loading .pkl model files
-pandas>=2.0.0                  # Data manipulation for ML models
-scikit-learn==1.6.1           # Match your local version (models saved with this version)
+# IMPORTANT: These versions must match what was used to train/save the models
+joblib>=1.3.2,<2.0.0          # For loading .pkl model files (pinned for compatibility)
+pandas>=2.0.0,<3.0.0          # Data manipulation for ML models (pinned for compatibility)
+scikit-learn==1.6.1           # EXACT version - must match training environment
 numpy>=1.24.0,<2.0.0          # Required by scikit-learn (pinned for compatibility)
 
 # ===========================================
