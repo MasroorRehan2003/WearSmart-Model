@@ -89,16 +89,34 @@ app.add_middleware(
 )
 
 # -------------------------------------------
-# Load models ONCE
+# Load models ONCE (with error handling)
 # -------------------------------------------
 
 _men_model, _women_model = None, None
+_men_model_error, _women_model_error = None, None
 
-if os.path.exists(MEN_MODEL_PATH):
-    _men_model = joblib.load(MEN_MODEL_PATH)
+def load_model_safely(model_path: str, model_name: str):
+    """Load model with error handling for version compatibility"""
+    if not os.path.exists(model_path):
+        print(f"⚠️ {model_name} model file not found: {model_path}")
+        return None, f"Model file not found: {model_path}"
+    
+    try:
+        model = joblib.load(model_path)
+        print(f"✅ {model_name} model loaded successfully")
+        return model, None
+    except KeyError as e:
+        error_msg = f"Model compatibility error (KeyError {e}). This usually means the model was saved with a different scikit-learn version."
+        print(f"❌ {error_msg}")
+        return None, error_msg
+    except Exception as e:
+        error_msg = f"Failed to load {model_name} model: {str(e)}"
+        print(f"❌ {error_msg}")
+        return None, error_msg
 
-if os.path.exists(WOMEN_MODEL_PATH):
-    _women_model = joblib.load(WOMEN_MODEL_PATH)
+# Load models
+_men_model, _men_model_error = load_model_safely(MEN_MODEL_PATH, "Men's")
+_women_model, _women_model_error = load_model_safely(WOMEN_MODEL_PATH, "Women's")
 
 # -------------------------------------------
 # Mount image folders
@@ -167,6 +185,8 @@ def health():
         "status": "ok",
         "men_model_loaded": _men_model is not None,
         "women_model_loaded": _women_model is not None,
+        "men_model_error": _men_model_error,
+        "women_model_error": _women_model_error,
         "men_images_available": os.path.isdir(MEN_IMAGES_ROOT),
         "women_images_available": os.path.isdir(WOMEN_IMAGES_ROOT),
     }
@@ -178,7 +198,11 @@ def health():
 @app.post("/recommend/men", response_model=OutfitResponse)
 def recommend_men(req: MenRequest):
     if _men_model is None:
-        raise HTTPException(500, "Men model not loaded!")
+        error_detail = _men_model_error or "Men model not loaded"
+        raise HTTPException(
+            status_code=503,
+            detail=f"Men model not available. {error_detail}"
+        )
 
     df = pd.DataFrame([req.dict()])
     top, bottom, outer = _men_model.predict(df)[0]
@@ -196,7 +220,11 @@ def recommend_men(req: MenRequest):
 @app.post("/recommend/women", response_model=OutfitResponse)
 def recommend_women(req: WomenRequest):
     if _women_model is None:
-        raise HTTPException(500, "Women model not loaded!")
+        error_detail = _women_model_error or "Women model not loaded"
+        raise HTTPException(
+            status_code=503,
+            detail=f"Women model not available. {error_detail}"
+        )
 
     df = pd.DataFrame([req.dict()])
     top, bottom, outer = _women_model.predict(df)[0]
