@@ -40,10 +40,22 @@ WOMEN_IMAGES_ROOT = "clothing_images"
 VALID_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 
 # MongoDB Configuration
+# Try environment variable first (Railway), then fallback to default
 MONGODB_URI = os.getenv(
     "MONGODB_URI",
     "mongodb+srv://i211707_db_user:2103921@cluster0.124kx3o.mongodb.net/wearsmart?retryWrites=true&w=majority"
 )
+
+# Log MongoDB URI status (without exposing password)
+if MONGODB_URI:
+    uri_parts = MONGODB_URI.split("@")
+    if len(uri_parts) > 1:
+        safe_uri = f"mongodb+srv://***@{uri_parts[1]}"
+        print(f"📦 MongoDB URI configured: {safe_uri}")
+    else:
+        print("📦 MongoDB URI configured")
+else:
+    print("⚠️ MongoDB URI not found - set MONGODB_URI environment variable")
 DATABASE_NAME = "wearsmart"
 COLLECTION_NAME = "clothing_images"
 
@@ -57,20 +69,35 @@ def get_mongodb_collection():
     global _mongodb_client, _mongodb_db, _mongodb_collection
     
     if not MONGODB_AVAILABLE:
+        print("⚠️ pymongo not available")
+        return None
+    
+    if not MONGODB_URI or MONGODB_URI == "YOUR_MONGODB_CONNECTION_STRING_HERE":
+        print("⚠️ MongoDB URI not configured")
         return None
     
     if _mongodb_collection is not None:
         return _mongodb_collection
     
     try:
-        _mongodb_client = MongoClient(MONGODB_URI)
+        print(f"🔌 Attempting MongoDB connection...")
+        _mongodb_client = MongoClient(MONGODB_URI, serverSelectionTimeoutMS=5000)
         _mongodb_db = _mongodb_client[DATABASE_NAME]
         _mongodb_collection = _mongodb_db[COLLECTION_NAME]
-        # Test connection
+        # Test connection with timeout
         _mongodb_client.admin.command('ping')
+        print(f"✅ MongoDB connected successfully to database: {DATABASE_NAME}")
         return _mongodb_collection
     except Exception as e:
-        print(f"⚠️ MongoDB connection error: {e}")
+        error_msg = str(e)
+        print(f"❌ MongoDB connection error: {error_msg}")
+        # More specific error messages
+        if "authentication" in error_msg.lower() or "password" in error_msg.lower():
+            print("   💡 Check your MongoDB username and password")
+        elif "timeout" in error_msg.lower() or "timed out" in error_msg.lower():
+            print("   💡 Check your IP whitelist in MongoDB Atlas")
+        elif "could not be resolved" in error_msg.lower():
+            print("   💡 Check your MongoDB connection string format")
         return None
 
 # ===========================================
