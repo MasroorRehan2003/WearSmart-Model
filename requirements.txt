@@ -27,23 +27,13 @@ python-dotenv>=1.0.0          # Load environment variables from .env file
 # HTTP & Testing
 # ===========================================
 requests>=2.31.0              # HTTP library for API testing and external requests
-fastapi
-uvicorn
-pydantic
-pandas
-joblib
-scikit-learn
-pymongo
-cloudinary
-python-multipart
-requests
 
 # ===========================================
-# Optional Dependencies (for other scripts)
+# Optional Dependencies (NOT NEEDED FOR API)
 # ===========================================
-# Uncomment if you need these features:
- streamlit>=1.28.0           # For Streamlit UI apps
-# gradio>=4.0.0               # For Gradio UI apps
- torch>=2.0.0                # PyTorch (for BLIP image captioning)
- transformers>=4.30.0        # Hugging Face transformers (for BLIP)
-# Pillow>=10.0.0              # PIL/Pillow for image processing
+# Uncomment ONLY if you need these features locally:
+# streamlit>=1.28.0           # For Streamlit UI apps (NOT needed for Railway deployment)
+# gradio>=4.0.0               # For Gradio UI apps (NOT needed for Railway deployment)
+# torch>=2.0.0                # PyTorch - VERY HEAVY, causes build timeout (NOT needed for API)
+# transformers>=4.30.0        # Hugging Face - VERY HEAVY, causes build timeout (NOT needed for API)
+# Pillow>=10.0.0              # PIL/Pillow for image processing (optional)
