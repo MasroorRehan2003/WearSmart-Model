@@ -1,0 +1,33 @@
+{
+  "total_feedback": 1,
+  "positive_feedback": 1,
+  "negative_feedback": 0,
+  "learning_improvements": [
+    {
+      "timestamp": "2025-10-17T02:39:55.015276",
+      "feedback_type": "positive",
+      "improvements": [
+        "\ud83d\udcc8 Improved accuracy for  season recommendations",
+        "\ud83c\udfaf Enhanced  occasion predictions"
+      ],
+      "confidence_change": 0.024120296830247617
+    }
+  ],
+  "user_preferences": {
+    "female": {
+      "": {
+        "": {
+          "positive": 1,
+          "negative": 0,
+          "preferred_items": [
+            "shirts",
+            "jeans",
+            "dupatta"
+          ]
+        }
+      }
+    }
+  },
+  "model_confidence": 0.95,
+  "last_updated": "2025-10-17T02:39:55.015315"
+}

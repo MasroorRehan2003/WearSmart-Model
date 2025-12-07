@@ -23,3 +23,5 @@ temperature,feels_like,humidity,wind_speed,weather_condition,time_of_day,season,
 8.15,7.61,87,1.44,rain,morning,winter,casual,good,sweater,jeans,coat
 32.53,30.29,16,2.02,clouds,morning,spring,casual,good,shirt,shorts,none
 33.12,33.97,40,2.95,clouds,morning,summer,casual,good,shirt,cotton pants,none
+2025-10-15T15:38:48.824948,female,,,,kurtas,jeans,none,yes,shopping_recommendation
+2025-10-16T21:39:55.013892,female,,,,shirts,jeans,dupatta,yes,shopping_recommendation

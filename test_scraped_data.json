@@ -1,0 +1,148 @@
+{
+  "outfitters_men": [
+    {
+      "name": "Checkered Shirt",
+      "price": "PKR 5,990",
+      "colors": [
+        "1 Color | Regular Fit   | Men",
+        "4 Colors | Regular Fit  | Men",
+        "2 Colors | Slim Fit  | Men",
+        "1 Color   | Men",
+        "2 Colors | Regular Fit  | Men"
+      ],
+      "image_url": "https://outfitters.com.pk/cdn/shop/files/F0985103113_2.jpg?v=1760426676&width=533",
+      "product_url": "https://outfitters.com.pk/collections/men-shirts",
+      "website": "Outfitters",
+      "category": "shirts",
+      "gender": "men"
+    },
+    {
+      "name": "Checkered Shirt",
+      "price": "PKR 5,990",
+      "colors": [
+        "1 Color | Regular Fit   | Men",
+        "4 Colors | Regular Fit  | Men",
+        "2 Colors | Slim Fit  | Men",
+        "1 Color   | Men",
+        "2 Colors | Regular Fit  | Men"
+      ],
+      "image_url": "https://outfitters.com.pk/cdn/shop/files/F0985103113_2.jpg?v=1760426676&width=533",
+      "product_url": "https://outfitters.com.pk/collections/men-shirts/products/f0985-103?variant=44604427632831",
+      "website": "Outfitters",
+      "category": "shirts",
+      "gender": "men"
+    },
+    {
+      "name": "Checkered Shirt",
+      "price": "PKR 5,990",
+      "colors": [
+        "1 Color | Regular Fit   | Men"
+      ],
+      "image_url": "https://outfitters.com.pk/cdn/shop/files/F0985103113_2.jpg?v=1760426676&width=533",
+      "product_url": "https://outfitters.com.pk/collections/men-shirts/products/f0985-103?variant=44604427632831",
+      "website": "Outfitters",
+      "category": "shirts",
+      "gender": "men"
+    },
+    {
+      "name": "Checkered ShirtRegular Fit",
+      "price": "PKR 5,990",
+      "colors": [
+        "Red"
+      ],
+      "image_url": "https://outfitters.com.pk/cdn/shop/files/F0985103113_2.jpg?v=1760426676&width=533",
+      "product_url": "https://outfitters.com.pk/collections/men-shirts/products/f0985-103?variant=44604427632831",
+      "website": "Outfitters",
+      "category": "shirts",
+      "gender": "men"
+    },
+    {
+      "name": "Checkered ShirtRegular Fit",
+      "price": "PKR 5,990",
+      "colors": [
+        "Red"
+      ],
+      "image_url": "",
+      "product_url": "https://outfitters.com.pk/collections/men-shirts/products/f0985-103?variant=44604427632831",
+      "website": "Outfitters",
+      "category": "shirts",
+      "gender": "men"
+    },
+    {
+      "name": "Basic Cotton Shirt",
+      "price": "PKR 4,290",
+      "colors": [
+        "4 Colors | Regular Fit  | Men",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "image_url": "https://outfitters.com.pk/cdn/shop/files/F0945103619.jpg?v=1759310379&width=533",
+      "product_url": "https://outfitters.com.pk/collections/men-shirts/products/f0945-103?variant=44496218489023",
+      "website": "Outfitters",
+      "category": "shirts",
+      "gender": "men"
+    },
+    {
+      "name": "Basic Cotton ShirtRegular Fit",
+      "price": "PKR 4,290",
+      "colors": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "image_url": "https://outfitters.com.pk/cdn/shop/files/F0945103619.jpg?v=1759310379&width=533",
+      "product_url": "https://outfitters.com.pk/collections/men-shirts/products/f0945-103?variant=44496218489023",
+      "website": "Outfitters",
+      "category": "shirts",
+      "gender": "men"
+    },
+    {
+      "name": "Basic Cotton ShirtRegular Fit",
+      "price": "PKR 4,290",
+      "colors": [],
+      "image_url": "",
+      "product_url": "https://outfitters.com.pk/collections/men-shirts/products/f0945-103?variant=44496218489023",
+      "website": "Outfitters",
+      "category": "shirts",
+      "gender": "men"
+    },
+    {
+      "name": "Basic Cotton Shirt",
+      "price": "PKR 4,290",
+      "colors": [
+        "4 Colors | Regular Fit  | Men",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "image_url": "https://outfitters.com.pk/cdn/shop/files/F0945103001-3_1.jpg?v=1760422130&width=533",
+      "product_url": "https://outfitters.com.pk/collections/men-shirts/products/f0945-103?variant=44496218161343",
+      "website": "Outfitters",
+      "category": "shirts",
+      "gender": "men"
+    },
+    {
+      "name": "Basic Cotton ShirtRegular Fit",
+      "price": "PKR 4,290",
+      "colors": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "image_url": "https://outfitters.com.pk/cdn/shop/files/F0945103001-3_1.jpg?v=1760422130&width=533",
+      "product_url": "https://outfitters.com.pk/collections/men-shirts/products/f0945-103?variant=44496218161343",
+      "website": "Outfitters",
+      "category": "shirts",
+      "gender": "men"
+    }
+  ],
+  "outfitters_women": [],
+  "khaadi_men": []
+}
